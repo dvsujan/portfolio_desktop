@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* set the container to be horizontally scrollable */
+      .container {
+        overflow-x: scroll;
+        white-space: nowrap;
+        width: 100%;
+        height: 200px;
+      }
+      
+      /* add some content to the container */
+      .box {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: #ddd;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    
+    <script>
+      // listen for scroll events on the container
+      var container = document.querySelector('.container');
+      container.addEventListener('scroll', function (event) {
+        // set the horizontal scroll position of the page to match the container's scroll position
+        window.scrollTo({
+          top: 0,
+          left: container.scrollLeft,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+  </body>
+</html>

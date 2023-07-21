@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <style>
+      /* create variables */
+
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      :root {
+        --yellow: #ffd93d;
+        --dark: #4f200d;
+        --orange: #ff8400;
+        --light: #f6f1e9;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: 'Roboto', sans-serif; */
+        font-family: "Poppins", sans-serif;
+        caret-color: var(--dark);
+        transition: all 0.3s ease-in-out;
+      }
+
+      body {
+        /* height:100% ; */
+        /* width:100vw ;  */
+        width: 1400vw;
+        background-color: var(--yellow);
+        display: flex;
+        flex-direction: row;
+        /* overflow-x:scroll;  */
+        color: var(--dark);
+        /* overflow:scroll ; */
+        /* overflow: scroll; */
+        overflow-y: hidden;
+        overflow-x: scroll;
+      }
+
+      nav {
+        width: 100vw;
+        height: 10vh;
+        /* background-color: red; */
+        /* background-color: var(--dark); */
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        /* background-color: green; */
+        color: var(--light);
+      }
+
+      .nav-btn {
+        width: 130px;
+        height: 40px;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid var(--dark);
+        color: var(--dark);
+        font-weight: 700;
+      }
+      .nav-btn:hover {
+        background-color: var(--dark);
+        color: var(--yellow);
+        transition: all 0.3s ease-in-out;
+      }
+
+      nav a {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--light);
+        margin-right: 1rem;
+        /* background-color: green; */
+        /* color:var(--light);  */
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--dark);
+        caret-color: var(--dark);
+      }
+
+      .sec {
+        /* width:100vw; 
+    height:100vh ; */
+        /* display:flex ;  */
+        display: flex;
+        background-color: var(--yellow);
+      }
+
+      .sec1 {
+        width: 100vw;
+        height: 100vh;
+        /* background-color: var(--dark); */
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .sec1 h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 1rem;
+      }
+      .sec1 a {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 1rem;
+      }
+
+      .h1-container {
+        display: flex;
+        width: 60%;
+        height: 40%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-bottom: 1rem;
+        /* background-color: green  ; */
+      }
+
+      .down-arrow {
+        position: fixed;
+        top: calc(90vh - 60px);
+        left: calc(90% - 14px);
+        width: 0;
+        height: 30px;
+        border: 2px solid;
+        border-radius: 2px;
+        animation: jumpInfinite 1.5s infinite;
+        transform: rotate(270deg);
+        z-index: 1000;
+      }
+
+      .down-arrow:after {
+        content: " ";
+        position: absolute;
+        top: 12px;
+        left: -10px;
+        width: 16px;
+        height: 16px;
+        border-bottom: 4px solid;
+        border-right: 4px solid;
+        border-radius: 4px;
+        transform: rotateZ(45deg);
+      }
+
+      @keyframes jumpInfinite {
+        0% {
+          margin-left: 0;
+        }
+        50% {
+          margin-left: 20px;
+        }
+        100% {
+          margin-left: 0;
+        }
+      }
+
+      /* change scroll bar style */
+      ::-webkit-scrollbar {
+        height: 5px;
+        background-color: var(--yellow);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        height: 5px;
+        background-color: var(--dark);
+        border-radius: 10px;
+      }
+
+      .sec2 {
+        width: 400vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* background-color: green; */
+      }
+
+      .sec2o5 {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* margin-top:10% ;  */
+      }
+
+      .sec2m {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        font-family: "Poppins", sans-serif !important;
+      }
+
+      .s2l {
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* justify-content: center; */
+        /* text-align: left; */
+        /* background-color: red; */
+      }
+
+      .sec2-content {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+      .s2header {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 1rem;
+      }
+      .s2side {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark);
+        margin-bottom: 1rem;
+        padding-left: 40px;
+      }
+      /* .s2l h5{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.s2l p {
+    font-size: 15px;
+    font-weight: 300;
+} */
+
+      .s2l span {
+        display: flex;
+        flex-direction: row;
+      }
+
+      /* .s2l h5 {
+    font-size: 1rem;
+    padding-left: 40px;
+} */
+
+      .s2r {
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bbtnc {
+        width: 40%;
+        margin-top: 5%;
+        margin-right: 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* .bbtnc button {
+    background-color: var(--dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5%;
+}
+
+.bbtnc a {
+    color: white;
+} */
+
+      .sec3 {
+        width: 600vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: all 1s ease-in-out;
+      }
+
+      .sec3-content {
+        position: fixed;
+        top: 10%;
+        left: 0;
+        width: 100vw;
+        height: 90vh;
+        background-color: red;
+        display: none;
+      }
+
+      .project-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 70vw;
+        height: 60vh;
+        border: 1px solid var(--dark);
+        transition: all 1s ease-in-out;
+      }
+      .project-left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        /* background-color: green; */
+      }
+
+      .project-left img {
+        width: 400px;
+        max-height: 300px;
+        object-fit: cover;
+      }
+      .project-left h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 1rem;
+      }
+
+      .project-right {
+        flex: 1;
+        display: flex;
+        /* background-color: red; */
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+
+      .tech-span {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        width: 100%;
+        padding-top: 1rem;
+      }
+      .tech-span img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin: 0 1rem;
+      }
+
+      .tech-span button {
+        width: 130px;
+        height: 40px;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid var(--dark);
+        color: var(--dark);
+        font-weight: 700;
+        transition: 0.5s ease-in-out;
+      }
+      .tech-span button:hover {
+        background-color: var(--dark);
+        color: var(--yellow);
+        transition: 0.3s ease-in-out;
+      }
+
+      .sec2text {
+        position: fixed;
+        padding: 1rem 2rem;
+        top: 30%;
+        left: 5%;
+        width: 80vw;
+        max-height: 60vh;
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 1rem;
+        /* background-color: red; */
+        transition: all 0.4s ease-in-out;
+        color: var(--yellow);
+      }
+
+      #project1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: transparent;
+        transition: all 1s ease-in-out;
+        /* transition: all 0.4s ease-in-out; */
+        color: black;
+        opacity: 0;
+        /* background:linear-gradient(135deg, white 10%, #4b6bfb 350%); */
+        /* background:none; */
+      }
+
+      #project2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* background-color: orange; */
+        color: black;
+      }
+
+      #project3 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100vw;
+        transition: all 1s ease-in-out;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #7289da;
+        color: #1e2124;
+      }
+
+      #project4 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        transition: all 1s ease-in;
+        height: 100vh;
+        opacity: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--yellow);
+        color: var(--dark);
+      }
+      #project5 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transition: all 1s ease-in-out;
+        opacity: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* background-color: white; */
+      }
+
+      .sec4 {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* background-color: yellow; */
+      }
+
+      .sec2text {
+        position: fixed;
+        padding: 1rem 2rem;
+        top: 30%;
+        left: 5%;
+        width: 80vw;
+        max-height: 60vh;
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 1rem;
+        /* background-color: red; */
+        transition: all 0.4s ease-in-out;
+        color: var(--yellow);
+      }
+
+      @keyframes animate {
+        0% {
+          transform: translateY(-12.5rem);
+        }
+        100% {
+          transform: translateY(calc(100vh - 12.5rem));
+        }
+      }
+
+      .socials ul {
+        position: relative;
+        top: 50%;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .socials ul li {
+        list-style: none;
+        margin: 0 2.5rem;
+      }
+
+      .socials ul li a .fa {
+        font-size: 2.5rem;
+        color: var(--yellow);
+        line-height: 5rem;
+        transition: 0.5s;
+      }
+
+      .socials ul li a {
+        position: relative;
+        display: flex;
+        text-decoration: none;
+        width: 5rem;
+        height: 5rem;
+        background: var(--dark);
+        border-width: 0rem;
+        justify-content: center;
+        transform: perspective(62.5rem) rotate(-30deg) skew(25deg)
+          translate(0, 0);
+        transition: 0.5s;
+        box-shadow: -1.25rem 1.25rem 0.625rem var(--dark);
+      }
+
+      .socials ul li a:before {
+        content: "";
+        position: absolute;
+        top: 0.625rem;
+        left: -1.25rem;
+        height: 100%;
+        width: 1.25rem;
+        background: var(--dark);
+        transition: 0.5s;
+        transform: rotate(0deg) skewY(-45deg);
+        border-width: 0rem;
+      }
+
+      .socials ul li a:after {
+        content: "";
+        position: absolute;
+        bottom: -1.25rem;
+        left: -0.625rem;
+        height: 1.25rem;
+        width: 100%;
+        background: var(--dark);
+        transition: 0.5s;
+        transform: rotate(0deg) skewX(-45deg);
+        border-width: 0rem;
+      }
+
+      .socials ul li a:hover {
+        transform: perspective(62.5rem) rotate(-30deg) skew(25deg)
+          translate(1.25rem, -1.25rem);
+        box-shadow: -3.125rem 3.125rem 3.125rem rgba(255, 255, 255, 0.877);
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover .fa {
+        color: white;
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(1) a {
+        background: var(--dark);
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(1) a:before {
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(1) a:after {
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(2) a {
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(2) a:before {
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(2) a:after {
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(3) a {
+        /* background: #171515; */
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(3) a:before {
+        /* background: #171515; */
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(3) a:after {
+        /* background: #171515; */
+        background: var(--dark);
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(4) a {
+        background: var(--dark);
+        /* background: #171515; */
+        /* background: #171515; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(4) a:before {
+        background: var(--dark);
+        /* background: #171515; */
+        /* background: #131111; */
+        border-width: 0rem;
+      }
+
+      ul li:hover:nth-child(4) a:after {
+        background: var(--dark);
+        /* background: #171515; */
+        /* background: #222020; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(5) a {
+        background: var(--dark);
+        /* background: #171515; */
+        /* background: #131111; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(5) a:before {
+        background: var(--dark);
+        /* background: #171515; */
+        /* background: #131111; */
+        border-width: 0rem;
+      }
+
+      .socials ul li:hover:nth-child(5) a:after {
+        background: var(--dark);
+        /* background: #171515; */
+        /* background: #131111; */
+        border-width: 0rem;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .socials ul {
+          flex-direction: column;
+          top: 0%;
+          align-items: space-around;
+        }
+        .socials li {
+          padding-top: 20%;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Sujan Portfolio</title>
+  </head>
+  <nav>
+    <a href="">PORTFOLIO</a>
+    <button class="nav-btn">CONTACT ME</button>
+  </nav>
+  <body>
+    <section class="sec sec1">
+      <div class="h1-container">
+        <h1>
+          <h1 class="s1intro">HELLO , I'M SUJAN</h1>
+          <h2 class="s1sub">
+            <a
+              href=""
+              class="typewrite"
+              data-period="2000"
+              data-type='["Full Stack Dev","Data Science","Game Dev"]'
+            >
+              <span class="wrap"></span>
+            </a>
+            <!-- <div class="down-arrow" id="down-arrow"></div> -->
+          </h2>
+        </h1>
+      </div>
+    </section>
+    <section class="sec sec2">
+      <h1 id="sec2text" class="sec2text"></h1>
+    </section>
+
+    <section class="sec2o5">
+      <div style="padding-top: 5%">
+        <h1>About Me</h1>
+      </div>
+      <div class="sec2m">
+        <div class="s2l">
+          <div class="sec2-content">
+            <span>
+              <h5 class="s2header">Name:</h5>
+              <h5 class="s2side">Venkata Sujan Dasari</h5>
+            </span>
+
+            <span>
+              <h5 class="s2header">Email:</h5>
+              <h5 class="s2side">dvsujan@gmail.com</h5>
+            </span>
+
+            <span>
+              <h5 class="s2header">Role:</h5>
+              <h5 class="s2side">Student</h5>
+            </span>
+
+            <span>
+              <h5 class="s2header">Location:</h5>
+              <h5 class="s2side">Andhra pradesh,India</h5>
+            </span>
+          </div>
+          <span class="bbtnc">
+            <button type="button" class="nav-btn">Projects</button>
+            <button type="button" class="nav-btn">Resume</button>
+          </span>
+        </div>
+        <div class="s2r">
+          <img src="./assets/info.svg" style="width: 50%" />
+        </div>
+      </div>
+    </section>
+    <section class="sec sec1">
+      <div class="h1-container">
+        <h1>
+          <h1 class="s1intro">Projects</h1>
+          <h2 class="s1sub">
+            <a
+              href=""
+              class="typewrite"
+              data-period="2000"
+              data-type='["GPT Lite","Self Driging car","Discord Clone","Snapic"]'
+            >
+              <span class="wrap"></span>
+            </a>
+            <div class="down-arrow" id="down-arrow"></div>
+          </h2>
+        </h1>
+      </div>
+    </section>
+    <section class="sec sec3">
+      <div class="project1" id="project1">
+        <div class="project-card">
+          <div class="project-left">
+            <img src="./assets/projectGpt.PNG" />
+            <h1>GPT Lite</h1>
+          </div>
+          <div class="project-right">
+            <div>
+              <h1>About</h1>
+              <p>
+                this is project lorem epsum lorem epsum lorem epsum lorem epsum
+                lorem epsum lorem epsum
+              </p>
+            </div>
+            <div>
+              <h1>Technologies Used</h1>
+              <span class="tech-span">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                />
+              </span>
+            </div>
+            <div>
+              <h1>Links</h1>
+              <span class="tech-span">
+                <button>GitHub</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project2" id="project2">
+        <div class="project-card">
+          <div class="project-left">
+            <img src="./assets/projectSnapic.png" />
+            <h1 style="">Snapic</h1>
+          </div>
+          <div class="project-right">
+            <div>
+              <h1>About</h1>
+              <p>
+                this is project lorem epsum lorem epsum lorem epsum lorem epsum
+                lorem epsum lorem epsum
+              </p>
+            </div>
+            <div>
+              <h1>Technologies Used</h1>
+              <span class="tech-span">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
+                />
+              </span>
+            </div>
+            <div>
+              <h1>Links</h1>
+              <span class="tech-span">
+                <button>GitHub</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project3" id="project3">
+        <div class="project-card">
+          <div class="project-left">
+            <img src="./assets/projectDiscord.png" />
+            <h1>Discord Clone</h1>
+          </div>
+          <div class="project-right">
+            <div>
+              <h1>About</h1>
+              <p>
+                this is project lorem epsum lorem epsum lorem epsum lorem epsum
+                lorem epsum lorem epsum
+              </p>
+            </div>
+            <div>
+              <h1>Technologies Used</h1>
+              <span class="tech-span">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
+                />
+              </span>
+            </div>
+            <div>
+              <h1>Links</h1>
+              <span class="tech-span">
+                <button>GitHub</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project4" id="project4">
+        <div class="project-card">
+          <div class="project-left">
+            <img src="./assets/mmo.gif" />
+            <h1>Multiplayer Shooter Game</h1>
+          </div>
+          <div class="project-right">
+            <div>
+              <h1>About</h1>
+              <p>
+                this is project lorem epsum lorem epsum lorem epsum lorem epsum
+                lorem epsum lorem epsum
+              </p>
+            </div>
+            <div>
+              <h1>Technologies Used</h1>
+              <span class="tech-span">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                />
+
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg"
+                />
+              </span>
+            </div>
+            <div>
+              <h1>Links</h1>
+              <span class="tech-span">
+                <button>GitHub</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project5" id="project5">
+        <div class="project-card">
+          <div class="project-left">
+            <img src="./assets/projectSDC.gif" />
+            <h1>Self Driving Car</h1>
+          </div>
+          <div class="project-right">
+            <div>
+              <h1>About</h1>
+              <p>
+                this is project lorem epsum lorem epsum lorem epsum lorem epsum
+                lorem epsum lorem epsum
+              </p>
+            </div>
+            <div>
+              <h1>Technologies Used</h1>
+              <span class="tech-span">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                />
+              </span>
+            </div>
+            <div>
+              <h1>Links</h1>
+              <span class="tech-span">
+                <button>GitHub</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec4" id="sec4">
+      <div class="s4t">
+        <h1>Contact Me</h1>
+      </div>
+      <div class="socials">
+        <ul>
+          <li>
+            <a href="https://facebook.com/" target="_blank"
+              ><i class="fa fa-facebook" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/dvsujan7/" target="_blank"
+              ><i class="fa fa-instagram" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a href="mailto:dvsujan@gmail.com" target="_blank"
+              ><i class="fa fa-envelope" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/dvsujan" target="_blank"
+              ><i class="fa fa-github" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/dv-sujan-4a34151a3/"
+              target="_blank"
+              ><i class="fa fa-linkedin" aria-hidden="true"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- <section class="sec sec4">
+      <div class="project-card">
+        <div class="project-left">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg"
+          />
+          <h1>Project Name</h1>
+        </div>
+        <div class="project-right">
+          <div>
+            <h1>About</h1>
+            <p>
+              this is project lorem epsum lorem epsum lorem epsum lorem epsum
+              lorem epsum lorem epsum
+            </p>
+          </div>
+          <div>
+            <h1>Technologies Used</h1>
+            <span class="tech-span">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg"
+              />
+            </span>
+          </div>
+          <div>
+            <h1>Links</h1>
+            <span class="tech-span">
+              <button>GitHub</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section> -->
+  </body>
+  <footer></footer>
+  <script>
+    var TxtType = function (el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = "";
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) {
+        delta /= 2;
+      }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === "") {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function () {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function () {
+      var elements = document.getElementsByClassName("typewrite");
+      for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute("data-type");
+        var period = elements[i].getAttribute("data-period");
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // INJECT CSS
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+      document.body.appendChild(css);
+    };
+  </script>
+  <script>
+    function getScrollXY() {
+      var scrOfX = 0,
+        scrOfY = 0;
+      if (typeof window.pageYOffset == "number") {
+        //Netscape compliant
+        scrOfY = window.pageYOffset;
+        scrOfX = window.pageXOffset;
+      } else if (
+        document.body &&
+        (document.body.scrollLeft || document.body.scrollTop)
+      ) {
+        //DOM compliant
+        scrOfY = document.body.scrollTop;
+        scrOfX = document.body.scrollLeft;
+      } else if (
+        document.documentElement &&
+        (document.documentElement.scrollLeft ||
+          document.documentElement.scrollTop)
+      ) {
+        //IE6 standards compliant mode
+        scrOfY = document.documentElement.scrollTop;
+        scrOfX = document.documentElement.scrollLeft;
+      }
+      return [scrOfX, scrOfY];
+    }
+
+    function getMousePosition(e) {
+      var x = e.clientX;
+      var y = e.clientY;
+      return [x, y];
+    }
+
+    // print position of scroll bar
+    const text = `Hey I'm Sujan. Through this website  I hope to showcase my skills, projects, and achievements, and provide you with a glimpse of what I can offer as a professional. Whether you're an employer, a potential client, or simply someone who's interested in my work, I invite you to explore my portfolio and learn more about what I do.`;
+    const texts = text.split(" ");
+
+    window.addEventListener("scroll", function () {
+      // if getScrollXY()[0] is in between 1000 and 5000 insert text into the div from the arra
+      // change uppler and lower limit according to screen lower limit is after 100% of the screen and upper limit is 500% of screen
+      var lowerLimit = window.innerWidth;
+      var upperLimit = window.innerWidth * 4;
+      // console.log("lowerLimit: ", lowerLimit, " upperLimit: ", upperLimit);
+
+      if (getScrollXY()[0] < lowerLimit || getScrollXY()[0] > upperLimit) {
+        document.getElementById("sec2text").innerHTML = "";
+        document.getElementById("sec2text").style.backgroundColor =
+          "transparent";
+      }
+
+      if (getScrollXY()[0] > lowerLimit && getScrollXY()[0] < upperLimit) {
+        var index = Math.floor(getScrollXY()[0] / 100);
+        // console.log(index%texts.length);
+        // append text to the div
+        // console.log(texts);
+        var str = "";
+        for (var i = 0; i < index; i++) {
+          if (text[i] != undefined) {
+            console.log(text[i]);
+            str += texts[i] + " ";
+          }
+        }
+        // background color
+        this.document.getElementById("sec2text").style.backgroundColor =
+          "#4F200D";
+        // remove all undefined from str
+        str = str.replace(/undefined/g, "");
+        document.getElementById("sec2text").innerHTML = str;
+      }
+
+      // code for section 3 hiding and showing according page posittion
+
+      var proj1lowerLimit = window.innerWidth * 6.5;
+      var proj1upperLimit = window.innerWidth * 8;
+      var proj1Content = this.document.getElementById("project1");
+      if (
+        getScrollXY()[0] < proj1lowerLimit ||
+        getScrollXY()[0] > proj1upperLimit
+      ) {
+        proj1Content.style.display = "none";
+        proj1Content.style.opacity = "0";
+        proj1Content.style.backgroundColor = "transparent";
+      }
+      if (
+        getScrollXY()[0] > proj1lowerLimit &&
+        getScrollXY()[0] < proj1upperLimit
+      ) {
+        proj1Content.style.display = "flex";
+        proj1Content.style.opacity = "1";
+        proj1Content.style.background =
+          " linear-gradient(135deg, white 10%, #4b6bfb 350%)";
+        // proj1Content.style.backgroundColor = "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)";
+        // get mouse position and change the background color of the div according to the mouse position
+        // console.log(getMousePosition()[0], getMousePosition()[1]) ;
+        // proj1Content.style.backgroundColor = "rgb(" + getMousePosition()[0] + "," + getMousePosition()[1] + ", 0)";
+      }
+
+      var proj2lowerLimit = window.innerWidth * 8;
+      var proj2upperLimit = window.innerWidth * 9;
+      var proj2Content = this.document.getElementById("project2");
+      if (
+        getScrollXY()[0] < proj2lowerLimit ||
+        getScrollXY()[0] > proj2upperLimit
+      ) {
+        proj2Content.style.display = "none";
+        proj2Content.style.opacity = "0";
+        proj2Content.style.backgroundColor = "transparent";
+      }
+      if (
+        getScrollXY()[0] > proj2lowerLimit &&
+        getScrollXY()[0] < proj2upperLimit
+      ) {
+        proj2Content.style.display = "flex";
+        proj2Content.style.opacity = "1";
+        // proj2Content.style.backgroundColor = "orange";
+        proj2Content.style.background =
+          " linear-gradient(135deg, white 10%, orange 250%)";
+      }
+
+      var proj3lowerLimit = window.innerWidth * 9;
+      var proj3upperLimit = window.innerWidth * 10;
+      var proj3Content = this.document.getElementById("project3");
+      if (
+        getScrollXY()[0] < proj3lowerLimit ||
+        getScrollXY()[0] > proj3upperLimit
+      ) {
+        proj3Content.style.display = "none";
+        proj3Content.style.opacity = "0";
+        proj3Content.style.backgroundColor = "transparent";
+        // make proj3Content animate please
+        proj3Content.style.animation = "slideIn 1s ease-in-out";
+      }
+      if (
+        getScrollXY()[0] > proj3lowerLimit &&
+        getScrollXY()[0] < proj3upperLimit
+      ) {
+        proj3Content.style.display = "flex";
+        proj3Content.style.opacity = "1";
+        // proj3Content.style.backgroundColor="#7289da";
+        proj3Content.style.animation = "slideIn 1s ease-in-out";
+        proj3Content.style.background =
+          " linear-gradient(135deg, white 10%, #7289da 250%)";
+      }
+
+      var proj4lowerLimit = window.innerWidth * 10;
+      var proj4upperLimit = window.innerWidth * 11;
+      var proj4Content = this.document.getElementById("project4");
+      if (
+        getScrollXY()[0] < proj4lowerLimit ||
+        getScrollXY()[0] > proj4upperLimit
+      ) {
+        proj4Content.style.display = "none";
+        proj4Content.style.opacity = "0";
+        proj4Content.style.backgroundColor = "transparent";
+      }
+      if (
+        getScrollXY()[0] > proj4lowerLimit &&
+        getScrollXY()[0] < proj4upperLimit
+      ) {
+        proj4Content.style.display = "flex";
+        proj4Content.style.opacity = "1";
+        // proj4Content.style.backgroundColor = "#FFD93D";
+        proj4Content.style.background =
+          " linear-gradient(135deg, white 10%, #FFD93D 250%)";
+      }
+
+      var proj5lowerLimit = window.innerWidth * 11;
+      var proj5upperLimit = window.innerWidth * 12;
+      var proj5Content = this.document.getElementById("project5");
+      if (
+        getScrollXY()[0] < proj5lowerLimit ||
+        getScrollXY()[0] > proj5upperLimit
+      ) {
+        proj5Content.style.display = "none";
+        proj5Content.style.opacity = "0";
+        proj5Content.style.backgroundColor = "transparent";
+      }
+      if (
+        getScrollXY()[0] > proj5lowerLimit &&
+        getScrollXY()[0] < proj5upperLimit
+      ) {
+        proj5Content.style.display = "flex";
+        proj5Content.style.opacity = "1";
+        // proj5Content.style.backgroundColor = "white";
+
+        proj5Content.style.background =
+          " linear-gradient(135deg, white 10%, red 350%)";
+      }
+
+      var arrowupperLimit = window.innerWidth * 12;
+      var arrowContent = this.document.getElementById("down-arrow");
+
+      if (getScrollXY()[0] > arrowupperLimit) {
+        arrowContent.style.position = "absolute";
+      } else {
+        arrowContent.style.position = "fixed";
+      }
+    });
+  </script>
+  <script>
+    var body = document.querySelector("body");
+    body.addEventListener("wheel", function (e) {
+      // e.preventDefault();
+      if (e.deltaY > 0) {
+        window.scrollBy(100, 0);
+      } else {
+        window.scrollBy(-100, 0);
+      }
+    });
+  </script>
+</html>
